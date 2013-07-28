@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Complejo Cultural Y Deportivo de Los Salias',
+	'name'=>'Complejo Cultural y Deportivo de Los Salias',
 
 	// preloading 'log' component
 	'preload'=>array('log'),

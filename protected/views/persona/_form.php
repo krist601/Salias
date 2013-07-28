@@ -116,7 +116,7 @@
         </li>-->
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'submitClass', 'class' => 'button small blue')); ?>
 	</div>
 <?php $this->endWidget(); ?>
 
