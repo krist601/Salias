@@ -10,6 +10,13 @@
  * @property integer $idpersona
  * @property integer $idprecio
  * @property integer $idtaller
+ * @property integer $numeroDeposito
+ * @property string $fechaDeposito
+ *
+ * The followings are the available model relations:
+ * @property Persona $idpersona0
+ * @property Precio $idprecio0
+ * @property Taller $idtaller0
  */
 class Factura extends CActiveRecord
 {
@@ -39,11 +46,11 @@ class Factura extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idpersona, idprecio, idtaller', 'numerical', 'integerOnly'=>true),
-			array('fecha, cancelado', 'safe'),
+			array('idpersona, idprecio, idtaller, numeroDeposito', 'numerical', 'integerOnly'=>true),
+			array('fecha, cancelado, fechaDeposito', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, fecha, cancelado, idpersona, idprecio, idtaller', 'safe', 'on'=>'search'),
+			array('id, fecha, cancelado, idpersona, idprecio, idtaller, numeroDeposito, fechaDeposito', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +62,9 @@ class Factura extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idpersona0' => array(self::BELONGS_TO, 'Persona', 'idpersona'),
+			'idprecio0' => array(self::BELONGS_TO, 'Precio', 'idprecio'),
+			'idtaller0' => array(self::BELONGS_TO, 'Taller', 'idtaller'),
 		);
 	}
 
@@ -70,6 +80,8 @@ class Factura extends CActiveRecord
 			'idpersona' => 'Idpersona',
 			'idprecio' => 'Idprecio',
 			'idtaller' => 'Idtaller',
+			'numeroDeposito' => 'Numero Deposito',
+			'fechaDeposito' => 'Fecha Deposito',
 		);
 	}
 
@@ -90,6 +102,8 @@ class Factura extends CActiveRecord
 		$criteria->compare('idpersona',$this->idpersona);
 		$criteria->compare('idprecio',$this->idprecio);
 		$criteria->compare('idtaller',$this->idtaller);
+		$criteria->compare('numeroDeposito',$this->numeroDeposito);
+		$criteria->compare('fechaDeposito',$this->fechaDeposito,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

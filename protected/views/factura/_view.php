@@ -29,5 +29,15 @@
 	<?php echo CHtml::encode($data->idtaller); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('numeroDeposito')); ?>:</b>
+	<?php echo CHtml::encode($data->numeroDeposito); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('fechaDeposito')); ?>:</b>
+	<?php echo CHtml::encode($data->fechaDeposito); ?>
+	<br />
+
+	*/ ?>
 
 </div>

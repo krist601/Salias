@@ -45,6 +45,18 @@
 		<?php echo $form->error($model,'idtaller'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'numeroDeposito'); ?>
+		<?php echo $form->textField($model,'numeroDeposito'); ?>
+		<?php echo $form->error($model,'numeroDeposito'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'fechaDeposito'); ?>
+		<?php echo $form->textField($model,'fechaDeposito'); ?>
+		<?php echo $form->error($model,'fechaDeposito'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

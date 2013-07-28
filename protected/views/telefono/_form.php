@@ -3,16 +3,7 @@
 /* @var $model Telefono */
 /* @var $form CActiveForm */
 ?>
- <script type="text/javascript">
-		var checkDisplay = function(check, form) { //check ID, form ID
-			form = document.getElementById(form), check = document.getElementById(check);
-			check.onclick = function(){
-				form.style.display = (this.checked) ? "block" : "none";
-				form.reset();
-			};
-			check.onclick();
-		};
-	</script>     
+ 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -35,10 +26,7 @@
 		<?php echo $form->textField($model,'numero'); ?>
 		<?php echo $form->error($model,'numero'); ?>
 	</div>
-        <input type="checkbox" id="emple" />
-	<div id="empleIn">
-		<input type="text" />
-	</div>
+        
 	<div class="row">
 		<?php echo $form->labelEx($model,'idpersona'); ?>
 		<?php echo $form->dropDownList($model,'idpersona', CHtml::listData(Persona::model()->findAll(), 'id', 'Nombre')); ?>
@@ -52,7 +40,3 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
-	<script type="text/javascript">
-	checkDisplay("emple", "empleIn");
-	</script>

@@ -27,5 +27,7 @@ $this->menu=array(
 		'idpersona',
 		'idprecio',
 		'idtaller',
+		'numeroDeposito',
+		'fechaDeposito',
 	),
 )); ?>

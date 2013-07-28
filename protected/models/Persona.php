@@ -62,9 +62,6 @@ class Persona extends CActiveRecord {
             array('FechaNac, esEmpleado, Password', 'safe'),
             array('correo', 'email','message'=>'Correo no valido'),
             array('Cedula', 'unique', 'attributeName'=>'Cedula','message'=>'Cedula ya existente en la base de datos'),
-            // array('Password', 'compare', 'compareAttribute' => 'PasswordConfirm','message'=>'Las contrasenias deben ser iguales'),
-            // The following rule is used by search().
-            // Please remove those attributes that should not be searched.
             array('Password', 'compare', 'compareAttribute' => 'PasswordConfirm', 'message' => 'Las contrasenias deben ser iguales'),
             array('Password, PasswordConfirm', 'length', 'max' => 50, 'min' => 6, 'tooShort' => 'Password debe ser mayor a 6 caracteres'),
             array('id, Cedula, Nombre, Apellido, FechaNac, Direccion, correo, esEmpleado, Password', 'safe', 'on' => 'search'),

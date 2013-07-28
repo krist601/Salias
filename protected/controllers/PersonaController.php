@@ -65,7 +65,8 @@ class PersonaController extends Controller {
 
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
-            $model->Password=/*md5*/($model->Password);
+            $model->Password=md5($model->Password);
+            $model->PasswordConfirm=md5($model->PasswordConfirm);
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -88,7 +89,8 @@ class PersonaController extends Controller {
 
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
-            $model->Password=/*md5*/($model->Password);
+            $model->Password=md5($model->Password);
+            $model->PasswordConfirm=md5($model->PasswordConfirm);
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }

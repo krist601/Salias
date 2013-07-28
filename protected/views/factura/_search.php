@@ -41,6 +41,16 @@
 		<?php echo $form->textField($model,'idtaller'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'numeroDeposito'); ?>
+		<?php echo $form->textField($model,'numeroDeposito'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'fechaDeposito'); ?>
+		<?php echo $form->textField($model,'fechaDeposito'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

@@ -12,12 +12,25 @@
         var templateHtml = "<div id='" + htmlId + "' name='" + htmlId + "'>\n";
         templateHtml +="<label>Telefono " + (childCount+1) + ": </label>"
         templateHtml += "<input type='text' id='etiquetas[" + childCount + "]' name='etiquetas[" + childCount + "]' />\n";
-        templateHtml += "<span onClick='$(\"#" + htmlId + "\").remove();'><img src='" + deleteIcon + "' /></span>\n";
+        templateHtml += "<span onClick='$(\"#" + htmlId + "\").remove();descontar();'><img src='" + deleteIcon + "' /></span>\n";
         templateHtml += "</div>\n";
         $("#childList").append(templateHtml);
         childCount++;      
   }
+  function descontar(){
+      childCount=childCount-1;
+  }
 </script>
+<script type="text/javascript">
+		var checkDisplay = function(check, form) { //check ID, form ID
+			form = document.getElementById(form), check = document.getElementById(check);
+			check.onclick = function(){
+				form.style.display = (this.checked) ? "block" : "none";
+				form.reset();
+			};
+			check.onclick();
+		};
+	</script>  
 
 <div class="form">
 
@@ -25,7 +38,7 @@
 	'id'=>'persona-form',
 	'enableAjaxValidation'=>false,
 )); ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -79,7 +92,6 @@
             ?>
             <?php echo $form->error($model, 'FechaNac'); ?>
         </div>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'Direccion'); ?>
 		<?php echo $form->textField($model,'Direccion',array('size'=>50,'maxlength'=>50)); ?>
@@ -94,16 +106,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'esEmpleado'); ?>
-		<?php echo $form->checkBox($model,'esEmpleado'); ?>
+		<?php echo $form->checkBox($model,'esEmpleado',array('id' => 'emple')); ?>
 		<?php echo $form->error($model,'esEmpleado'); ?>
 	</div>
 
-	<?php echo ($model->esEmpleado) ?><div class="row">
+	<div class="row" id="empleIn">
 		<?php echo $form->labelEx($model,'Password'); ?>
 		<?php echo $form->passwordField($model,'Password', array('value' => '')); ?>
-                <?php echo $form->passwordField($model,'PasswordConfirm'); ?>
+                <?php echo $form->passwordField($model,'PasswordConfirm', array('value' => '')); ?>
 		<?php echo $form->error($model,'Password'); ?>
-	</div><?php ?>
+	</div>
         
         <div id="childList">
         </div>
@@ -116,8 +128,11 @@
         </li>-->
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'submitClass', 'class' => 'button small blue')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Save',array('class' => 'submitClass', 'class' => 'button small blue')); ?>
 	</div>
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script type="text/javascript">
+	checkDisplay("emple", "empleIn");
+</script>
