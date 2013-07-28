@@ -8,7 +8,7 @@
     var childCount =  0;
     function addChild() {
         var htmlId = "telefono" + childCount;  
-        var deleteIcon = '/LosSalias/images/icon_delete.png';     
+        var deleteIcon = '<?php echo Yii::app()->baseUrl ?>/images/icon_delete.png';     
         var templateHtml = "<div id='" + htmlId + "' name='" + htmlId + "'>\n";
         templateHtml +="<label>Telefono " + (childCount+1) + ": </label>"
         templateHtml += "<input type='text' id='etiquetas[" + childCount + "]' name='etiquetas[" + childCount + "]' />\n";
