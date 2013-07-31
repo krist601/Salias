@@ -18,15 +18,15 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('idpersona')); ?>:</b>
-	<?php echo CHtml::encode($data->idpersona); ?>
+	<?php echo CHtml::encode($data->idpersona0->correo); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('idprecio')); ?>:</b>
-	<?php echo CHtml::encode($data->idprecio); ?>
+	<?php echo CHtml::encode($data->idprecio0->Monto); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('idtaller')); ?>:</b>
-	<?php echo CHtml::encode($data->idtaller); ?>
+	<?php echo CHtml::encode($data->idtaller0->Nombre); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('numeroDeposito')); ?>:</b>

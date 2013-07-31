@@ -70,6 +70,7 @@ class FacturaController extends Controller
 		if(isset($_POST['Factura']))
 		{
 			$model->attributes=$_POST['Factura'];
+                        $model->fecha = date("Y-m-d"); 
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

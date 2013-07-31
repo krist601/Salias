@@ -48,9 +48,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'fecha',
 		'cancelado',
-		'idpersona',
-		'idprecio',
-		'idtaller',
+		array ('name'=>'idpersona','value'=>'$data->idpersona0->Nombre','type'=>'text',),
+                array ('name'=>'idprecio','value'=>'$data->idprecio0->Monto','type'=>'text',),
+                array ('name'=>'idtaller','value'=>'$data->idtaller0->Nombre','type'=>'text',),
 		/*
 		'numeroDeposito',
 		'fechaDeposito',
